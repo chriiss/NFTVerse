@@ -19,17 +19,11 @@ export default {
             recordsPerPage: 100,
             enterpage: '',
             datas: dataJson,
-            sortBy: null,
-            view: {
-                topOfPage: true
-            }
+            sortBy: null
         }
     },
     created () {
         this.getData()
-    },
-    beforeMount() {
-        window.addEventListener('scroll', this.handleScroll);
     },
     methods: {
         async getData() {
@@ -55,10 +49,6 @@ export default {
                 this.page = parseInt(this.enterpage)
                 this.getData()
             }
-        },
-        handleScroll(){
-            let scroll = (window.pageYOffset>50) ? this.view.topOfPage = false : this.view.topOfPage = true
-            return scroll;
         }
     },
     computed: {
@@ -81,14 +71,17 @@ export default {
 
 
 <template>
-    <div class="collections bg_color">
+    <div id="collect" class="collections bg_color">
         <Loader :loading="showLoader" />
         <h2 class="text_center secondary_color">
              <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="#17EF97" width="15" class="homepage_star"><path d="m9 0 2.756 6.244L18 9l-6.244 2.756L9 18l-2.756-6.244L0 9l6.244-2.756L9 0Z"></path></svg>
             Explore Collections
              <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="#35467E" width="15" class="homepage_star"><path d="m9 0 2.756 6.244L18 9l-6.244 2.756L9 18l-2.756-6.244L0 9l6.244-2.756L9 0Z"></path></svg>
         </h2>
-        <div :class="{ 'onScroll': !view.topOfPage}">
+        <div class="button_bloc">
+            <a href="#collect">	&#8593;</a>
+        </div>
+        <div>
             <div class="search_bloc" >
                 <input type="text" v-model="searchDatas" placeholder="Search a collection"/>
             </div>
@@ -133,8 +126,24 @@ export default {
 
 
 <style scoped lang="scss">
+@use "../assets/variables.scss" as *;
 @use "../assets/mixins.scss" as *;
-@include onScrollStyle;
 @include collectionStyle;
 @include styleAnimation;
+
+.button_bloc {
+    float: right;
+    margin-right: 2rem;
+    position: sticky;
+    top: 25rem;
+    z-index: 1;
+
+    a {
+        background-color: $primary_color;
+        color: $secondary_color;
+        font-weight: bold;
+        border: 1px solid $secondary_color;
+        padding: 1rem;
+    }
+}
 </style>

@@ -4,7 +4,19 @@ export default {
   data() {
     return {
       dataTitle: dataJson.titleComponent,
-      datas: dataJson.navbarComponent
+      datas: dataJson.navbarComponent,
+      view: {
+        topOfPage: true
+      }
+    }
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll(){
+      let scroll = (window.pageYOffset>50) ? this.view.topOfPage = false : this.view.topOfPage = true
+      return scroll;
     }
   }
 }
@@ -12,7 +24,7 @@ export default {
 
 
 <template>
-  <div class="navbar d_flex f_column">
+  <div class="navbar d_flex f_column" :class="{ 'onScroll': !view.topOfPage}">
     <div class="title d_flex" v-for="data in dataTitle" :key="data.id">
       <img :src="'/' + data.img" :alt="data.name"/>
       <h1>{{data.title}}</h1>
@@ -26,5 +38,6 @@ export default {
 
 <style scoped lang="scss">
 @use "../assets/mixins.scss" as *;
+@include onScrollStyle;
 @include navbarStyle;
 </style>
