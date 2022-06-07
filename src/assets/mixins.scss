@@ -1,0 +1,275 @@
+@use "./variables.scss" as *;
+
+@mixin borderStyle {
+  max-width: 250px;
+  border-width: 3px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-style: solid;
+  border-image:linear-gradient(to top, $third_color, #743ad5,#e761ff) 1 100%;
+}
+
+@mixin borderRadius {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+@mixin centerStyle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@mixin onScrollStyle {
+  .onScroll {
+    position: fixed;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    background-color: rgb(2, 2, 48);
+    top: 0%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: $secondary_color;
+    z-index: 9999;
+  }
+}
+
+@mixin nftBlocStyle {
+  .nft_bloc {
+    width: 100%;
+
+    &_children {
+      width: 350px;
+      color: $third_color;
+      display: block;
+      margin: auto;
+      img {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        @include borderRadius;
+
+        &:hover {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+          transition: all .75s ease-in-out;
+        }
+      }
+      &_bis {
+        background-color: linear-gradient(to left, #01041C, $fourth_color);
+        border: 2px solid $border_color;
+        padding: 2rem;
+        @include borderRadius;
+        @media(max-width: $mobile_tablet_breakpoint) {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@mixin paginationStyle{
+  .pagination {
+    .pagination-item {
+      display: inline-block;
+      color: $secondary_color;
+      button.disabled {
+        color: $secondary_color;
+        cursor: no-drop;
+        background-color: $primary_color;
+      }
+      .active {
+        background-color: $primary_color;
+        color: $secondary_color !important;
+        font-weight: bold;
+        padding: 3px 8px;
+      }
+    }
+  }
+  button[disabled], html input[disabled] {
+    cursor: default;
+    color: $secondary_color;
+  }
+}
+
+
+@mixin navbarStyle {
+    .navbar {
+        padding: 1.5rem;
+        background-color: $primary_color;
+        color: $secondary_color;
+        .title {
+          flex: 0.5;
+          img {
+            width: 30px;
+          }
+          h1 {
+            font-size: 22px;
+            margin-left: 1rem;
+          }
+        }
+        nav {
+         #link {
+          margin-left: 1.5rem;
+          color: $secondary_color;
+          vertical-align: sub;
+           &:hover {
+             color: $third_color;
+             transition-delay: all 0.75 ease-in-out;
+           }
+
+           @media(max-width: $mobile_tablet_breakpoint) {
+             margin-left: 3rem;
+           }
+         }
+        }
+        .active {
+          @include borderStyle;
+        }
+        .exact-active-link {
+          @include borderStyle;
+        }
+    }
+}
+
+
+@mixin homeStyle {
+  .home {
+    &_background {
+      background: url($background_img) no-repeat center center;
+      height: 800px;
+      background-size: cover;
+
+        &_title {
+          font-size: 36px;
+          padding-top: 15rem;
+          padding-left: 2rem;
+          width: 60%;
+
+          @media(max-width: $mobile_tablet_breakpoint) {
+            width: 80%;
+            padding-top: 10rem;
+          }
+
+          @media(max-width: $mobile_breakpoint) {
+            font-size: calc(36px/1.5);
+          }
+
+        .text-highlight {
+          background-image: -webkit-linear-gradient(45deg, $primary_color, $third_color);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+
+    &_main {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    @include nftBlocStyle;
+  }
+}
+
+
+@mixin styleAnimation {
+  .homepage_star {
+    animation: Homepage_floating 4s ease-in-out alternate infinite;
+    -webkit-animation: Homepage_floating 4s ease-in-out alternate infinite;
+}
+
+  @keyframes  Homepage_floating  {
+    from {
+      transform: translateY(50%);
+      -webkit-transform: translateY(50%);
+      -moz-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+      -o-transform: translateY(50%);
+}
+
+    to {
+      transform: translateY(0%);
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      -o-transform: translateY(0%);
+}
+  }
+}
+
+
+@mixin collectionStyle {
+  .collections {
+    padding-top: calc(5rem/2);
+    padding-bottom: 5rem;
+    @include nftBlocStyle;
+
+    .search_bloc {
+      margin-bottom: 4rem;
+
+      input {
+        @include centerStyle();
+        width: 500px;
+        padding: 1rem;
+        @include borderRadius();
+        border: 1px solid $border_color;
+        background-color: $fourth_color;
+        color: $secondary_color;
+
+        &::placeholder {
+          color: $border_color;
+        }
+
+        @media(max-width: $mobile_tablet_breakpoint) {
+          width: 80%;
+        }
+      }
+    }
+
+    .supply_bloc {
+      background-color: linear-gradient(to top, #01041C, $fourth_color);
+      border: 1px solid $border_color;
+      margin-top: 2rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      @include borderRadius();
+      @include centerStyle();
+      width: 200px;
+
+      .fa-ethereum {
+        color:#9f92d8 !important;
+      }
+    }
+
+    .show_items {
+      margin-left: 0.5rem;
+
+      label {
+        color: $third_color;
+        margin-left: 0.7rem;
+      }
+    }
+  }
+}
+
+
+@mixin footerStyle {
+  .footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 2px solid $border_color;
+    color: $border_color;
+  }
+}

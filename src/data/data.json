@@ -1,0 +1,79 @@
+{
+    "titleComponent": [
+        {
+            "title": "NFTVerse",
+            "img": "nfticon.png"
+        }
+    ],
+    "navbarComponent": [
+        {
+            "name": "Home",
+            "link": "/"
+        },
+        {
+            "name": "Collections",
+            "link": "/Collections"
+        }
+    ],
+    "homeCollectionComponent": [
+        {
+            "name": "Bunny Collection",
+            "img_link": "/img/bunny-7.jpg"
+        },
+        {
+            "name": "Cat Collection",
+            "img_link": "/img/cat.jpg"
+        },
+        {
+            "name": "Dog Collection",
+            "img_link": "/img/dog-3.jpg"
+        }
+    ],
+    "homeNFTComponent": [
+        {
+            "title": "Buy NFTs",
+            "description": "Browse the collection and buy the NFT you want in a few clicks",
+            "img_link": "/img/buy_nfts.webp"
+        },
+        {
+            "title": "Sell NFTs",
+            "description": "Easily sell the NFTs of the collections listed on NFTVerse",
+            "img_link": "/img/sell_nfts.webp"
+        }
+    ],
+    "selectItemsCollect": [
+        {
+            "value": 10
+        },
+        {
+            "value": 20
+        },
+        {
+            "value": 30
+        },
+        {
+            "value": 40
+        },
+        {
+            "value": 50
+        },
+        {
+            "value": 100
+        }
+    ],
+    "selectFilterCollections": [
+        {
+            "name": "High to Low (Vol Supply)",
+            "value": 1
+        },
+        {
+            "name": "Low to High (Vol Supply)",
+            "value": 2
+        }
+    ],
+    "footerComponent": [
+        {
+            "copyright": "All rights reserved 2022 ©"
+        }
+    ]
+}
