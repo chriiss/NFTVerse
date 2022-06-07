@@ -26,7 +26,7 @@ export default {
 <template>
   <div class="navbar d_flex f_column" :class="{ 'onScroll': !view.topOfPage}">
     <div class="title d_flex" v-for="data in dataTitle" :key="data.id">
-      <img :src="'/' + data.img" :alt="data.name"/>
+      <img :src="'/' + data.img" :alt="data.title"/>
       <h1>{{data.title}}</h1>
     </div>
     <nav v-for="data in datas" :key="data.id">
