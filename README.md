@@ -1,6 +1,6 @@
 # NFTVerse
 
-Link: https://resonant-dragon-7f52bb.netlify.app/
+Link: https://thriving-moxie-8698f1.netlify.app
 
 ## Project Setup
 
