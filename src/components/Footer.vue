@@ -16,6 +16,6 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use "../assets/mixins.scss" as *;
+@use "@/assets" as *;
 @include footerStyle;
 </style>

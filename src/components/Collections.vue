@@ -126,8 +126,7 @@ export default {
 
 
 <style scoped lang="scss">
-@use "../assets/variables.scss" as *;
-@use "../assets/mixins.scss" as *;
+@use "@/assets" as *;
 @include collectionStyle;
 @include styleAnimation;
 

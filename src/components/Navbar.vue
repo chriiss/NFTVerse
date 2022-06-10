@@ -37,7 +37,7 @@ export default {
 
 
 <style scoped lang="scss">
-@use "../assets/mixins.scss" as *;
+@use "@/assets" as *;
 @include onScrollStyle;
 @include navbarStyle;
 </style>

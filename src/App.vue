@@ -25,8 +25,7 @@ components: {
 </template>
 
 <style lang="scss">
-@use "./assets/variables.scss" as *;
-@use "./assets/mixins.scss" as *;
+@use "assets" as *;
 * {
   margin: 0;
   padding: 0;

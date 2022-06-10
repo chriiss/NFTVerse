@@ -52,32 +52,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .loader-overlay {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    align-items: center;
-    display: none;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 9999;
-    &.is-active {
-      display: flex;
-    }
-    &.is-full-page {
-      z-index: 9999;
-      position: fixed;
-    }
-    .loader-background {
-      bottom: 0;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: #000000;
-      opacity: 0.5;
-    }
-  }
+@use "@/assets" as *;
+@include loaderStyle;
 </style>
