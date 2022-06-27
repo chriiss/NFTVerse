@@ -39,7 +39,7 @@ export default {
                     <vue-writer class="text-highlight" :array="titleText" :eraseSpeed="50" :typeSpeed="100"></vue-writer>
                 </h1>
                 <p>Discover our work below</p>
-                <router-link to="/Collections" class="btn">Collection</router-link>
+                <router-link to="/Collections" class="btn">View collection</router-link>
             </div>
         </div>
         <div class="home_main  bg_color text_center">
