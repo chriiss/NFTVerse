@@ -39,7 +39,7 @@ export default {
                     <vue-writer class="text-highlight" :array="titleText" :eraseSpeed="50" :typeSpeed="100"></vue-writer>
                 </h1>
                 <p>Discover our work below</p>
-                <form action="/collections" method="get">
+                <form action="/Collections" method="get">
                     <button type="submit" class="btn">View Collection</button>
                 </form>
             </div>

@@ -82,13 +82,14 @@ export default {
             <a href="#collect">	&#8593;</a>
         </div>
         <div>
+            <h4 class="pagination_color">{{filteredCollections.length}} results</h4>
             <div class="search_bloc" >
                 <input type="search" v-model="searchDatas" placeholder="Search a collection"/>
             </div>
             <ul class="show_items d_flex f_column">
                 <li>
                     <label>Show Items</label><br>
-                    <select   class="pagination_color" @change="onChangeRecordsPerPage" v-model="recordsPerPage">
+                    <select class="pagination_color" @change="onChangeRecordsPerPage" v-model="recordsPerPage">
                     <option v-for="data in datas.selectItemsCollect" :key="data.id" :value="data.value">{{data.value}}</option>
                     </select>
                 </li>
