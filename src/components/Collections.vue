@@ -83,7 +83,7 @@ export default {
         </div>
         <div>
             <div class="search_bloc" >
-                <input type="text" v-model="searchDatas" placeholder="Search a collection"/>
+                <input type="search" v-model="searchDatas" placeholder="Search a collection"/>
             </div>
             <ul class="show_items d_flex f_column">
                 <li>
